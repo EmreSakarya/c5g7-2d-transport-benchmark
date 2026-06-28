@@ -34,6 +34,30 @@ here is a fully heterogeneous S<sub>N</sub> transport solution that converges to
 
 ---
 
+## Mesh convergence
+
+Refining the spatial mesh drives the eigenvalue error from **−3616 pcm** (coarse) down to
+**−182 pcm** (fine), a ~20× reduction:
+
+| Cells/pin | Mesh | h [cm] | k<sub>eff</sub> | Error [pcm] |
+|---|---|---|---|---|
+| 4  | 204²  | 0.315  | 1.150391 | −3616 |
+| 6  | 306²  | 0.210  | 1.170711 | −1584 |
+| 8  | 408²  | 0.158  | 1.168785 | −1777 |
+| 10 | 510²  | 0.126  | 1.182204 | −435  |
+| 16 | 816²  | 0.079  | 1.184733 | −182  |
+
+![mesh convergence](results/mesh_convergence.png)
+
+The convergence is **not perfectly monotone** — note the bump at cells/pin = 8. This is the
+**stairstep effect**: as the Cartesian mesh refines, the digital-disk representation of each
+curved pin boundary changes in discrete jumps, so the leakage (and hence k<sub>eff</sub>)
+shifts non-smoothly between resolutions. The overall trend is clear convergence toward the
+reference; a smooth, monotone curve would require a body-fitted / characteristics method that
+follows the true circular pin boundary.
+
+---
+
 ## The benchmark
 
 C5G7 (OECD/NEA, NEA/NSC/DOC(2003)16) is the reference problem for verifying deterministic
