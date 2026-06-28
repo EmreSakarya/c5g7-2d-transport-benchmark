@@ -1,0 +1,7 @@
+*.mod
+*.o
+*.exe
+c5g7
+c5g7v*
+*.csv
+!docs/*.csv
