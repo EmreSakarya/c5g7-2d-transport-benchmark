@@ -1,9 +1,8 @@
-# C5G7 — Teknik Anlatım: Difüzyondan Transporta
+# C5G7 — Teknik Anlatım
 
 ## 1. Motivasyon — neden transport?
 
-IAEA-3D PWR benchmark'ını 2-grup **difüzyon** ile çözdüm ve referansa **−7.9 pcm**
-yaklaştım. Difüzyon teorisi (Fick yasası, J = −D∇φ) homojenleştirilmiş, yumuşak-akılı
+Difüzyon teorisi (Fick yasası, J = −D∇φ) homojenleştirilmiş, yumuşak-akılı
 bölgeler için mükemmeldir. Ama:
 
 - keskin **yakıt/su arayüzlerinde**,
